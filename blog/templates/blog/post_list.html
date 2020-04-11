@@ -2,10 +2,15 @@
 <head>
   <title>Bryce's Test Page</title>
 </head>
-<h1>Test Heading</h1>
-<h2>Subheading</h2>
-<body>
-  <p> If you can read this </p>
-  <p> then it works! </p>
-</body>
+<div>
+    <h1><a href="/">Bryce's Blog</a></h1>
+</div>
+
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
 </html>
